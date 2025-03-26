@@ -7,13 +7,13 @@ const questions = [
     },
     {
         question: '世界で最も大きな大陸は？',
-        image: '"\images\lion.jpg"',
+        image: '"\images\lion.png"',
         choices: ['アフリカ', 'アジア', '北アメリカ', '南アメリカ'],
         correct: 1
     },
     {
         question: '1 + 1 = ?',
-        image: '"\images\apple.jpg"',
+        image: '"\images\apple.png"',
         choices: ['2', '3', '4', '5'],
         correct: 0
     }
