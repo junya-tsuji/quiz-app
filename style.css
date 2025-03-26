@@ -87,3 +87,11 @@ h1 {
     font-size: 1.2rem;
     color: #666;
 } 
+
+.question-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

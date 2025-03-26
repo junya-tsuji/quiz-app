@@ -1,16 +1,19 @@
 const questions = [
     {
         question: '日本の首都は？',
+        image: '"\images\tokyo.jpg"',
         choices: ['東京', '大阪', '京都', '福岡'],
         correct: 0
     },
     {
         question: '世界で最も大きな大陸は？',
+        image: '"\images\lion.jpg"',
         choices: ['アフリカ', 'アジア', '北アメリカ', '南アメリカ'],
         correct: 1
     },
     {
         question: '1 + 1 = ?',
+        image: '"\images\apple.jpg"',
         choices: ['2', '3', '4', '5'],
         correct: 0
     }
@@ -30,6 +33,11 @@ function showQuestion() {
     questionElement.textContent = question.question;
     choicesElement.innerHTML = '';
     canAnswer = true;
+
+    // 画像を表示
+    const imageElement = document.getElementById('question-image');
+    imageElement.src = question.image;
+    imageElement.style.display = 'block';
 
     question.choices.forEach((choice, index) => {
         const button = document.createElement('div');
