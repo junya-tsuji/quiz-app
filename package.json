@@ -2,11 +2,23 @@
     "name": "quiz-app",
     "version": "1.0.0",
     "description": "Webクイズアプリケーション",
-    "main": "server.js",
+    "main": "api/server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node api/server.js"
     },
     "dependencies": {
         "express": "^4.21.2"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JunZiiee/quiz-app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JunZiiee/quiz-app/issues"
+    },
+    "homepage": "https://github.com/JunZiiee/quiz-app#readme"
 }
