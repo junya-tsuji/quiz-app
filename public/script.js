@@ -16,6 +16,12 @@ const questions = [
         image: '/images/apple.png',
         choices: ['2', '3', '4', '5'],
         correct: 0
+    },
+    {
+        question: 'どこの店舗？？',
+        image: '/images/hibaji.jpg',
+        choices: ['ひばりヶ丘', '目黒', '生田', '三田'],
+        correct: 0
     }
 ];
 
@@ -91,6 +97,11 @@ function showResults() {
     choicesElement.innerHTML = '';
     nextButton.style.display = 'none';
     scoreElement.textContent = `最終スコア: ${score}/${questions.length}`;
+    
+     // 画像を非表示にする   
+    const imageElement = document.getElementById('question-image');
+    imageElement.style.display = 'none';
+    imageElement.src = ''; // 念のため空にする
 }
 
 nextButton.addEventListener('click', nextQuestion);
