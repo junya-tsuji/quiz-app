@@ -89,9 +89,12 @@ h1 {
 } 
 
 .question-image {
-    max-width: 300px;
-    height: auto;
+    width: 100%;               /* 画面幅に自動調整 */
+    max-width: 800px;          /* 最大幅を設定 (自由に調整可) */
+    height: auto;              /* 縦横比を維持 */
     margin-bottom: 20px;
+    margin: 0 auto;            /* 画像を中央に配置 */
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;         /* ボックス内にきれいに収める */
 }
