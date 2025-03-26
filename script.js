@@ -1,19 +1,19 @@
 const questions = [
     {
         question: '日本の首都は？',
-        image: '"\images\tokyo.jpg"',
+        image: '/images/tokyo.jpg',
         choices: ['東京', '大阪', '京都', '福岡'],
         correct: 0
     },
     {
         question: '世界で最も大きな大陸は？',
-        image: '"\images\lion.png"',
+        image: '/images/lion.png',
         choices: ['アフリカ', 'アジア', '北アメリカ', '南アメリカ'],
         correct: 1
     },
     {
         question: '1 + 1 = ?',
-        image: '"\images\apple.png"',
+        image: '/images/apple.png',
         choices: ['2', '3', '4', '5'],
         correct: 0
     }
