@@ -1,27 +1,27 @@
 const questions = [
     {
-        question: '日本の首都は？',
-        image: '/images/tokyo.jpg',
-        choices: ['東京', '大阪', '京都', '福岡'],
-        correct: 0
-    },
-    {
-        question: '世界で最も大きな大陸は？',
-        image: '/images/lion.png',
-        choices: ['アフリカ', 'アジア', '北アメリカ', '南アメリカ'],
-        correct: 1
-    },
-    {
-        question: '1 + 1 = ?',
-        image: '/images/apple.png',
-        choices: ['2', '3', '4', '5'],
+        question: 'どこの店舗？？',
+        image: '/images/mita.jpeg',
+        choices: ['三田', '目黒', '千住大橋', '小岩'],
         correct: 0
     },
     {
         question: 'どこの店舗？？',
+        image: '/images/kabukichou.jpg',
+        choices: ['中山', '西台', '歌舞伎町', '池袋'],
+        correct: 2
+    },
+    {
+        question: 'どこの店舗？？',
+        image: '/images/sendai.jpg',
+        choices: ['札幌', '府中', '仙台', '京都'],
+        correct: 2
+    },
+    {
+        question: 'どこの店舗？？',
         image: '/images/hibaji.jpg',
-        choices: ['ひばりヶ丘', '目黒', '生田', '三田'],
-        correct: 0
+        choices: ['三田', '目黒', '生田', 'ひばりヶ丘'],
+        correct: 3
     }
 ];
 
