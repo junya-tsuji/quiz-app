@@ -89,12 +89,20 @@ h1 {
 } 
 
 .question-image {
-    width: 100%;               /* 画面幅に自動調整 */
-    max-width: 800px;          /* 最大幅を設定 (自由に調整可) */
-    height: auto;              /* 縦横比を維持 */
-    margin-bottom: 20px;
-    margin: 0 auto;            /* 画像を中央に配置 */
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;  /* 余白を広げる */
+    margin: 0 auto;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;         /* ボックス内にきれいに収める */
+    object-fit: cover;
+}
+
+/* 質問と画像の間に余白を追加 */
+#question {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;   /* 画像との余白を増やす */
+    margin-bottom: 1.5rem;
+    color: #444;
 }
