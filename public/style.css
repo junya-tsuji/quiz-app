@@ -26,6 +26,8 @@ h1 {
     text-align: center;
     color: #333;
     margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 5vw, 3rem); /* 自動でサイズ調整 */
+    word-break: break-word; /* 長すぎる単語を折り返す */
 }
 
 #question {
