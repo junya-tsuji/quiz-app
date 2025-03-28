@@ -294,8 +294,20 @@ h1 {
 }
 
 .result-message {
+    font-size: 4vw;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    padding: 10px;
     animation: fadeInUp 0.8s ease-out;
     /* 既存のスタイルは維持 */
+}
+
+@media screen and (max-width: 480px) {
+    .result-message {
+        font-size: 5vw;
+    }
 }
 
 /* より微妙な揺れエフェクト */
