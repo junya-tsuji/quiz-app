@@ -2,28 +2,40 @@
 // 各問題は、質問文、画像パス、選択肢、正解の選択肢インデックスを含む
 const questions = [
     {
-        question: 'どこの店舗？？',
-        image: '/images/mita.jpeg',
+        question: 'どこの店舗？',
+        image: '/images/001_mita.jpg',
         choices: ['三田', '目黒', '千住大橋', '小岩'],
         correct: 0 //　正解は「三田」（インデックス0）
     },
     //　他の問題も同様の構造
     {
-        question: 'どこの店舗？？',
-        image: '/images/kabukichou.jpg',
-        choices: ['中山', '西台', '歌舞伎町', '池袋'],
+        question: 'どこの店舗？',
+        image: '/images/001_nakayama.jpg',
+        choices: ['中山', '西台', '品川', '仙台'],
+        correct: 0
+    },
+    {
+        question: 'どこの店舗？',
+        image: '/images/001_sendai.jpg',
+        choices: ['朝倉街道', '栃木街道', '仙台', '中山'],
         correct: 2
     },
     {
-        question: 'どこの店舗？？',
-        image: '/images/sendai.jpg',
-        choices: ['札幌', '府中', '仙台', '京都'],
-        correct: 2
+        question: 'どこの店舗？',
+        image: '/images/001_kaminoge.jpg',
+        choices: ['朝倉街道', '上野毛', '桜台', '府中'],
+        correct: 1
     },
     {
-        question: 'どこの店舗？？',
-        image: '/images/hibaji.jpg',
-        choices: ['三田', '目黒', '生田', 'ひばりヶ丘'],
+        question: 'どこの店舗？',
+        image: '/images/002_kaminoge.jpg',
+        choices: ['朝倉街道', '目黒', '府中', '上野毛'],
+        correct: 3
+    },
+    {
+        question: 'どこの店舗？',
+        image: '/images/001_kyouto.jpg',
+        choices: ['生田', '中山', '京成大久保', '京都'],
         correct: 3
     }
 ];
@@ -199,6 +211,14 @@ function showResults() {
     //メッセージを追加
     resultContainer.insertBefore(messageElement, resultList);
 
+    // quiz-button-containerの「メニューに戻る」ボタンを非表示にする
+    const quizButtonContainer = document.querySelector('.quiz-button-container');
+    if (quizButtonContainer) {
+        const menuButton = quizButtonContainer.querySelector('a');
+        if (menuButton) {
+            menuButton.style.display = 'none';
+        }
+    }
     // スコアを表示
     scoreElement.textContent = `最終スコア: ${score}/${totalQuestions}`;
 
@@ -206,7 +226,7 @@ function showResults() {
     const imageElement = document.getElementById('question-image');
     imageElement.style.display = 'none';
     imageElement.src = ''; // 念のため空にする
-
+    
     // 結果一覧を表示
     userAnswers.forEach((answer, index) => {
         const resultItem = document.createElement('li');
@@ -241,6 +261,15 @@ retryButton.addEventListener('click', () => {
     // 画像と選択肢を再設定
     const imageElement = document.getElementById('question-image');
     imageElement.style.display = 'block';
+
+    // quiz-button-containerの「メニューに戻る」ボタンを再表示
+    const quizButtonContainer = document.querySelector('.quiz-button-container');
+    if (quizButtonContainer) {
+        const menuButton = quizButtonContainer.querySelector('a');
+        if (menuButton) {
+            menuButton.style.display = 'block'; // これを追加
+        }
+    }
 
     // 最初の問題を再表示   
     showQuestion();

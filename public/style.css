@@ -206,6 +206,19 @@ h1 {
     background-color: #d35400; /* 濃いオレンジ */
 }
 
+#start-screen .btn {
+    width: 100%; /* 幅を100%に */
+    max-width: 250px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央揃え */
+    display: block; /* ブロック要素に */
+}
+
+#start-screen .menu-button {
+    width: 100%; /* 幅を100%に */
+    max-width: 250px; /* 最大幅を設定 */
+    margin: 10px auto; /* 上下マージンと中央揃え */
+}
+
 /* 結果画面のスタイル */
 #quiz {
     text-align: center;
@@ -328,7 +341,7 @@ h1 {
 }
 
 #next {
-    background-color: #007bff; /* 通常の「次の問題」ボタンの色 */
+    background-color: #fd7e14; /* 通常の「次の問題」ボタンの色 */
     color: white;
     transition: background-color 0.3s ease;
 }
@@ -353,4 +366,88 @@ h1 {
 .result-history div {
     max-height: 200px;
     overflow-y: auto;
+}
+
+.quiz-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.quiz-button:hover {
+    background-color: #45a049;
+}
+
+a {
+    text-decoration: none; /* アンダーラインを削除 */
+}
+
+.menu-button {
+    text-align: center;
+    background-color: #2196F3; /* 青色 */
+    margin-left: 20px; /* 再挑戦ボタンとの間隔 */
+}
+
+.menu-button:hover {
+    background-color: #1976D2; /* より濃い青 */
+}
+
+.result-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* ボタン間の間隔を調整 */
+    margin-top: 1rem;
+    width: 100%; /* 全幅を使用 */
+}
+
+#retry, .menu-button {
+    flex: 1; /* 均等な幅を確保 */
+    max-width: 250px; /* 最大幅を設定 */
+    width: 100%; /* 幅を100%に */
+    padding: 1rem;
+    margin: 0; /* マージンをリセット */
+}
+
+#retry {
+    background-color: #6f42c1; /* 紫色 */
+}
+
+#retry:hover {
+    background-color: #5a32a3; /* より濃い紫色 */
+}
+
+.menu-button {
+    background-color: #2196F3; /* 青色 */
+}
+
+.menu-button:hover {
+    background-color: #1976D2; /* より濃い青 */
+}
+
+.quiz-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* ボタン間の間隔 */
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.quiz-button-container #next,
+.quiz-button-container .menu-button {
+    flex: 1; /* 均等な幅を確保 */
+    max-width: 250px; /* 最大幅を設定 */
+    width: 100%; /* 幅を100%に */
+    padding: 1rem;
+    margin: 0; /* マージンをリセット */
 }
