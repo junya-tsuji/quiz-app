@@ -298,18 +298,24 @@ h1 {
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 100%;
+    max-width: 90%;
     padding: 10px;
     animation: fadeInUp 0.8s ease-out;
-    /* 既存のスタイルは維持 */
+    margin: 0 auto; /* 中央に配置 */
 }
 
 @media screen and (max-width: 480px) {
     .result-message {
-        font-size: 5vw;
+        font-size: 4vw; /* 調整したフォントサイズ */
     }
 }
 
+@media screen and (max-width: 320px) {
+    .result-message {
+        font-size: 6vw; /* さらに小さいデバイス向け */
+        padding: 5px; /* パディングを減らす */
+    }
+}
 /* より微妙な揺れエフェクト */
 @keyframes subtleShake {
     0%, 100% { transform: translateX(0); }
