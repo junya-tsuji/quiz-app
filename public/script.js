@@ -217,6 +217,9 @@ function showResults() {
     // 再挑戦ボタンを表示
     const retryButton = document.getElementById('retry');
     retryButton.style.display = 'block';
+
+    // 新しく追加するログ保存のコード
+    saveQuizResult();
 }
 
 // 再挑戦ボタンのイベントリスナー
@@ -251,3 +254,54 @@ retryButton.addEventListener('click', () => {
 });
 
 nextButton.addEventListener('click', nextQuestion);
+
+// ログ保存用の関数を追加
+function saveQuizResult() {
+    // 結果オブジェクトを作成
+    const result = {
+        date: new Date().toLocaleString(), // 日付
+        score: score,                      // スコア
+        totalQuestions: questions.length,  // 全問題数
+        timestamp: Date.now()              // タイムスタンプ
+    };
+
+    // ローカルストレージに保存
+    // 以前の結果を取得（なければ空の配列）
+    const previousResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
+    
+    // 新しい結果を追加
+    previousResults.push(result);
+    
+    // 上限を設定（例：最新の10件のみ保存）
+    const limitedResults = previousResults.slice(-10);
+    
+    // ローカルストレージに保存
+    localStorage.setItem('quizResults', JSON.stringify(limitedResults));
+}
+
+// 保存した結果を表示する関数（オプション）
+function displayQuizResults() {
+    const results = JSON.parse(localStorage.getItem('quizResults') || '[]');
+    
+    // 結果表示用の要素を取得（HTMLに追加が必要）
+    const resultList = document.getElementById('result-history');
+    resultList.innerHTML = ''; // 既存の内容をクリア
+    
+    // 結果を逆順（最新のものが上）で表示
+    results.reverse().forEach((result, index) => {
+        const resultItem = document.createElement('div');
+        resultItem.innerHTML = `
+            <p>テスト ${results.length - index}:</p>
+            <p>日付: ${result.date}</p>
+            <p>スコア: ${result.score}/${result.totalQuestions}</p>
+            <hr>
+        `;
+        resultList.appendChild(resultItem);
+    });
+}
+
+// 結果履歴をクリアする関数（オプション）
+function clearQuizResults() {
+    localStorage.removeItem('quizResults');
+    displayQuizResults(); // 表示を更新
+}

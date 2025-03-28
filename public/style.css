@@ -319,3 +319,20 @@ h1 {
     background-color: #28a745; /* 「結果」ボタンの色 */
     color: white;
 }
+
+.result-history {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.result-history h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.result-history div {
+    max-height: 200px;
+    overflow-y: auto;
+}
