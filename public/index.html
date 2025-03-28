@@ -9,14 +9,39 @@
 <body>
     <div class="container">
         <h1>ラーメン二郎完全攻略</h1>
-        <img id="question-image" src="" alt="Question Image" class="question-image">
+
+        <!-- スタート画面を作成 -->
+        <div id="start-screen">
+            <p>クイズを始める準備ができました！</p>
+            <img src="/images/always.jpg" alt="Start Image" id="start-image">
+            <button id="start-btn" class="btn">スタート</button>
+        </div>
+
+        <!-- クイズ画面 -->
         <div id="quiz">
+            <img id="question-image" src="" alt="Question Image" class="question-image">
             <h2 id="question"></h2>
             <div id="choices" class="choices"></div>
             <button id="next" class="btn">次の問題</button>
             <div id="score" class="score"></div>
+
+            <!-- 結果画面 -->
+            <div id="result-screen" style="display: none;">
+                <h2>結果</h2>
+                <div class="result-container">
+                    <p>あなたの最終スコアは: <span id="score-final"></span></p>
+
+                    <!-- 問題の正誤履歴 -->
+                    <ul class="result-list" id="result-list"></ul>
+
+                    <!-- 再挑戦ボタンを追加 -->
+                    <button id="retry" class="btn" style="display: none;">再挑戦</button>
+                </div>
+            </div>
+            
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html> 

@@ -1,25 +1,28 @@
+/* 全要素のリセットと基本設定 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;              /* 全要素のデフォルトマージンを削除 */
+    padding: 0;             /* 全要素のデフォルトパディングを削除 */
+    box-sizing: border-box; /* パディングとボーダーを要素の幅高さに含める */
 }
 
+/* ボディ全体のレイアウト設定 */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Arial', sans-serif; /* フォントファミリー */
+    background-color: #f0f2f5;      /* 背景色 */
+    min-height: 100vh;                /* 画面の最小高さを画面全体に */
+    display: flex;                    /* フレックスボックスレイアウト */
+    justify-content: center;          /* 水平方向中央揃え */
+    align-items: center;              /* 垂直方向中央揃え */
 }
 
+/* コンテナのスタイル */
 .container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
+    background-color: white; /* 背景色 */
+    padding: 2rem;             /* 内側の余白 */
+    border-radius: 10px;       /* 角丸 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影効果 */
+    width: 90%;                /* 幅 */
+    max-width: 600px;          /* 最大幅 */
 }
 
 h1 {
@@ -32,8 +35,14 @@ h1 {
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { 
+        opacity: 0;                  /* 初期状態で透明 */
+        transform: translateY(20px); /* 少し下にずらす */
+    }
+    100% { 
+        opacity: 1;                  /* 最終的に完全に表示 */
+        transform: translateY(0);    /* 元の位置に戻す */
+    }
 }
 
 #question {
@@ -51,13 +60,14 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+/* 選択肢のスタイリング */
 .choice {
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border: 2px solid #dee2e6;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 1rem;                  /* 内側の余白 */
+    background-color: #f8f9fa;    /* 背景色 */
+    border: 2px solid #dee2e6;    /* ボーダー */
+    border-radius: 5px;             /* 角丸 */
+    cursor: pointer;                /* カーソルをポインターに */
+    transition: all 0.3s ease;      /* なめらかな変化 */
     position: relative;
     overflow: hidden;
 }
@@ -74,13 +84,15 @@ h1 {
     z-index: 0;
 }
 
+/* ホバーエフェクト */
 .choice:hover::before {
-    width: 100%;
+    width: 100%; /* ホバー時に全幅に広がるグラデーション */
 }
 
 .choice:hover {
     color: white;
     border-color: transparent;
+    background-color: #007bff; /* ホバー時に青の背景に変更 */
 }
 
 .choice.correct {
@@ -93,23 +105,24 @@ h1 {
     border-color: #f5c6cb;
 }
 
+/* ボタンの共通スタイル */
 .btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;                  /* ブロック要素 */
+    width: 100%;                     /* 幅100% */
+    padding: 1rem;                   /* 内側の余白 */
+    background-color: #007bff;       /* 背景色 */
+    color: white;                    /* 文字色 */
+    border: none;                    /* ボーダーなし */
+    border-radius: 5px;              /* 角丸 */
+    cursor: pointer;                 /* カーソルをポインターに */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* なめらかな変化 */
 }
 
+/* ボタンホバー時のエフェクト */
 .btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;       /* ホバー時の背景色 */
+    transform: translateY(-4px);     /* 少し上に浮かび上がらせる */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 影を追加 */
 }
 
 .score {
@@ -117,13 +130,12 @@ h1 {
     margin-top: 1rem;
     font-size: 1.5rem;
     color: #666;
-    animation: pulse 1.5s infinite;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .question-image {
@@ -136,9 +148,174 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
 }
 
 .question-image:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.feedback {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.feedback.correct {
+    background-color: #28a745;
+}
+
+.feedback.wrong {
+    background-color: #dc3545;
+}
+
+#retry {
+    margin-top: 1rem;
+    background-color: #6f42c1; /* 紫色 */
+    color: white;    
+    display: none;  /* 初めは非表示 */
+}
+
+#retry:hover {
+    background-color: #5a32a3; /* より濃い紫色 */
+}
+
+#start-screen {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+#start-image {
+    width: 80%;  /* 画像の幅を画面幅に対して調整 */
+    max-width: 400px;  /* 最大幅を指定 */
+    height: auto;  /* 高さは自動で調整 */
+    margin: 20px 0;  /* 上下に余白を追加 */
+}
+
+/* オレンジ系 */
+#start-btn {
+    background-color: #fd7e14; /* オレンジ */
+}
+
+#start-btn:hover {
+    background-color: #d35400; /* 濃いオレンジ */
+}
+
+/* 結果画面のスタイル */
+#quiz {
+    text-align: center;
+    padding: 20px;
+    display: none;
+}
+
+.result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-container p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.result-container p.correct {
+    color: #28a745; /* 正解は緑色 */
+}
+
+.result-container p.wrong {
+    color: #dc3545; /* 不正解は赤色 */
+}
+
+/* 最終スコア */
+#score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 結果画面のスタイル */
+.result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-container p:last-of-type {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+/* 正誤履歴一覧のスタイル */
+.result-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.result-list li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.result-list li.correct {
+    background-color: #d4edda; /* 正解 */
+    color: #28a745;
+}
+
+.result-list li.wrong {
+    background-color: #f8d7da; /* 不正解 */
+    color: #dc3545;
+}
+
+.result-list li:hover {
+    transform: translateX(10px);
+}
+
+.result-message {
+    animation: fadeInUp 0.8s ease-out;
+    /* 既存のスタイルは維持 */
+}
+
+/* より微妙な揺れエフェクト */
+@keyframes subtleShake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.result-message:hover {
+    animation: subtleShake 0.5s;
+}
+
+#next {
+    background-color: #007bff; /* 通常の「次の問題」ボタンの色 */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#next.result-btn {
+    background-color: #28a745; /* 「結果」ボタンの色 */
+    color: white;
 }
